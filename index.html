@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PABE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Poppins:wght@700&family=Arapey&display=swap" rel="stylesheet">
     <style>
         /* Variáveis de Cores e Fontes - Inspiradas em imersao.anaclarabastos.com.br */
         :root {
@@ -17,7 +17,7 @@
             --btn-hover: #e0973a; /* Hover do botão CTA principal */
             --whatsapp-btn-bg: #25d366; /* Fundo do botão WhatsApp */
             --whatsapp-btn-hover: #1ebe57; /* Hover do botão WhatsApp */
-            --font-head: 'Montserrat', sans-serif;
+            --font-head: 'Montserrat', sans-serif; /* Mantido para outros títulos, mas Poppins será para h1 do header */
             --font-body: 'Open Sans', sans-serif;
             /* Novas cores adicionadas */
             --pabe-text-color: #8d7c6f;
@@ -59,28 +59,27 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* Removido o overlay escuro, pois o background-color já é a cor desejada */
             z-index: 0;
         }
 
         header .content {
             position: relative;
-            z-index: 1; /* Garante que o conteúdo fique acima do overlay (que foi removido) */
+            z-index: 1; /* Garante que o conteúdo fique acima do overlay */
             max-width: 800px;
             margin: auto;
         }
 
         header h1 {
-            font-family: var(--font-head);
+            font-family: 'Poppins', sans-serif; /* Fonte para TREINAMENTO PABE */
             font-size: 3.2rem;
             margin-bottom: 10px;
-            font-weight: 700;
+            font-weight: 700; /* Bold */
             color: var(--pabe-text-color); /* Cor de PABE */
         }
 
         header h1 span {
             display: block;
-            font-size: 1.5rem;
+            font-size: 2.2rem; /* Tamanho da fonte maior para Práticas > Atitude > Bem-Estar */
             color: var(--pabe-text-color); /* Cor de Práticas > Atitude > Bem-Estar */
             font-weight: 600;
         }
@@ -88,11 +87,11 @@
         /* Novo estilo para os nomes das psicoterapeutas no header */
         .therapist-names-header {
             color: var(--psicoterapeuta-name-color);
-            font-family: var(--font-head);
+            font-family: 'Arapey', serif; /* Nova fonte para os nomes das psicoterapeutas */
             font-size: 1.5rem;
             margin-top: 15px; /* Espaço do subtítulo */
             margin-bottom: 30px; /* Espaço para o botão CTA */
-            font-weight: 600;
+            font-weight: 400; /* Arapey geralmente é normal */
         }
 
         .btn-cta {
@@ -256,7 +255,7 @@
                 font-size: 2.8rem;
             }
             header h1 span {
-                font-size: 1.3rem;
+                font-size: 2rem; /* Ajuste para responsividade */
             }
             .therapist-names-header {
                 font-size: 1.3rem;
@@ -305,7 +304,7 @@
                 font-size: 2.4rem;
             }
             header h1 span {
-                font-size: 1.1rem;
+                font-size: 1.8rem; /* Ajuste para responsividade */
             }
             .therapist-names-header {
                 font-size: 1.1rem;
@@ -337,7 +336,7 @@
                 font-size: 1.8rem;
             }
             header h1 span {
-                font-size: 0.9rem;
+                font-size: 1.4rem; /* Ajuste para responsividade */
             }
             .therapist-names-header {
                 font-size: 0.9rem;
@@ -389,7 +388,7 @@
 
     <header>
         <div class="content">
-            <h1 style="color: var(--pabe-text-color);">PABE<br><span style="color: var(--pabe-text-color);">Práticas > Atitude > Bem-Estar</span></h1>
+            <h1 style="color: var(--pabe-text-color);">TREINAMENTO PABE<br><span style="color: var(--pabe-text-color);">Práticas > Atitude > Bem-Estar</span></h1>
             <p class="therapist-names-header">Waleska Cruz e Cybele Lassandro</p>
             <a href="#inscricao" class="btn-cta">Quero Participar</a>
         </div>
@@ -417,7 +416,7 @@
         </ul>
     </section>
 
-    <section id="detalhes-da-imersao">
+    <section id="detalhes-da-jornada">
         <h2>Detalhes da jornada</h2>
         <p>📅 Dia 09 de agosto – Ao vivo e online<br>⏰ Das 09h às 16h<br>🎓 Voltado para psicólogos e estudantes de psicologia com interesse em luto clínico</p>
     </section>
