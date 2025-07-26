@@ -39,6 +39,15 @@
     .cta-section h3{font-family:var(--font-head); font-size:2rem; margin-bottom:20px;}
     .btn-whatsapp{display:inline-block;background:#25d366;color:#fff;padding:16px 28px;border-radius:40px;text-decoration:none;font-size:1.15rem;font-weight:600;margin:10px 0;transition:transform .2s;}
     .btn-whatsapp:hover{transform:translateY(-3px);}
+    /* Novo estilo para o container dos botões do WhatsApp */
+    .whatsapp-buttons-container {
+        display: flex;
+        flex-direction: column; /* Botões um abaixo do outro */
+        align-items: center; /* Centralizar os botões */
+        gap: 15px; /* Espaço entre os botões */
+        margin-top: 25px;
+        margin-bottom: 30px;
+    }
     footer{text-align:center;padding:40px 20px;font-size:0.9rem;color:var(--text-light);}
     @media(max-width:768px){
       header h1{font-size:2.6rem;} header p{font-size:1.1rem;}
@@ -98,7 +107,14 @@
 <section id="inscricao" class="cta-section">
   <h3>Inscrições abertas – Garanta seu lugar</h3>
   <p>Valor promocional do 2º lote: <strong>R$ 62,00</strong> – Inclui reembolso garantido.</p>
-  <a href="https://wa.me/55419XXXXXXX" class="btn-whatsapp" target="_blank">WhatsApp Ana Clara</a>
+    <div class="whatsapp-buttons-container">
+        <a class="btn-whatsapp" href="https://wa.me/5541988180624" target="_blank" rel="noopener">
+            WhatsApp Waleska Cruz (41) 98818-0624
+        </a>
+        <a class="btn-whatsapp" href="https://wa.me/5541988180625" target="_blank" rel="noopener">
+            WhatsApp Cybele Lassandro (41) 98818-0625
+        </a>
+    </div>
 </section>
 
 <footer>
