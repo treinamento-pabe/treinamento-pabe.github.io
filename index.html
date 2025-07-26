@@ -21,7 +21,7 @@
             --font-body: 'Open Sans', sans-serif;
             /* Novas cores adicionadas */
             --pabe-text-color: #8d7c6f;
-            --psicoterapeuta-name-color: #fff; /* Alterado para branco */
+            --psicoterapeuta-name-color: #d8726a; /* <-- COR ALTERADA AQUI */
             --main-background-color: #ebdfd8;
             --header-background-color: #e1c7c5; /* Nova cor de fundo para o header */
         }
@@ -86,7 +86,7 @@
 
         /* Novo estilo para os nomes das psicoterapeutas no header */
         .therapist-names-header {
-            color: var(--psicoterapeuta-name-color);
+            color: var(--psicoterapeuta-name-color); /* <-- UTILIZANDO A VARIÁVEL ATUALIZADA AQUI */
             font-family: 'Arapey', serif; /* Nova fonte para os nomes das psicoterapeutas */
             font-size: 1.5rem;
             margin-top: 15px; /* Espaço do subtítulo */
@@ -124,7 +124,7 @@
         }
 
         section:first-of-type {
-            /* margin-top: 0;  */
+            /* margin-top: 0; */
         }
 
         h2 {
@@ -230,10 +230,6 @@
         .btn-whatsapp:hover {
             background: var(--whatsapp-btn-hover);
             transform: translateY(-3px);
-        }
-
-        .whatsapp-name {
-            color: var(--psicoterapeuta-name-color); /* Cor do nome da psicoterapeuta nos botões */
         }
 
         /* Rodapé */
@@ -436,10 +432,7 @@
         <p>Valor do Treinamento PABE: R$359,00 no PIX.</p>
         <div class="whatsapp-buttons-container">
             <a class="btn-whatsapp" href="https://wa.me/5541988180624" target="_blank" rel="noopener">
-                WhatsApp <span class="whatsapp-name">Waleska Cruz</span>
-            </a>
-            <a class="btn-whatsapp" href="https://wa.me/5541988180625" target="_blank" rel="noopener">
-                WhatsApp <span class="whatsapp-name">Cybele Lassandro</span>
+                WhatsApp
             </a>
         </div>
     </section>
