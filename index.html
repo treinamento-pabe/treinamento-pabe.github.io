@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PABE</title> <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>PABE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         /* Variáveis de Cores e Fontes - Inspiradas em imersao.anaclarabastos.com.br */
         :root {
@@ -18,6 +19,10 @@
             --whatsapp-btn-hover: #1ebe57; /* Hover do botão WhatsApp */
             --font-head: 'Montserrat', sans-serif;
             --font-body: 'Open Sans', sans-serif;
+            /* Novas cores adicionadas */
+            --pabe-text-color: #8d7c6f;
+            --psicoterapeuta-name-color: #d8726a;
+            --main-background-color: #ebdfd8;
         }
 
         /* Reset Básico e Estilos Gerais */
@@ -30,7 +35,7 @@
         body {
             font-family: var(--font-body);
             color: var(--text-dark);
-            background: var(--bg-light);
+            background: var(--main-background-color); /* Fundo geral da página */
             line-height: 1.6;
             -webkit-font-smoothing: antialiased; /* Suaviza fontes no Webkit */
             -moz-osx-font-smoothing: grayscale; /* Suaviza fontes no Firefox */
@@ -41,7 +46,7 @@
             /* Use uma imagem de fundo real ou mantenha o placeholder */
             background: url('hero-placeholder.jpg') center/cover fixed no-repeat; 
             position: relative;
-            color: white;
+            color: white; /* Cor padrão para texto do header, será sobrescrita para PABE */
             text-align: center;
             padding: 120px 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra para o header */
@@ -70,12 +75,13 @@
             font-size: 3.2rem;
             margin-bottom: 10px;
             font-weight: 700;
+            color: var(--pabe-text-color); /* Cor de PABE */
         }
 
         header h1 span {
             display: block;
             font-size: 1.5rem;
-            color: var(--bg-light); /* Cor do subtítulo no header */
+            color: var(--pabe-text-color); /* Cor de Práticas > Atitude > Bem-Estar */
             font-weight: 600;
         }
 
@@ -111,13 +117,12 @@
             max-width: 1000px;
             margin: 40px auto; /* Adiciona margem entre as seções */
             text-align: center;
-            background: #fff; /* Fundo branco para todas as seções */
+            background: #fff; /* Fundo branco para as seções */
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Sombra sutil para as seções */
         }
 
         section:first-of-type {
-            /* Como não há mais conteúdo antes do header, esta regra pode ser ajustada se a primeira seção estiver muito colada */
             /* margin-top: 0;  */
         }
 
@@ -210,7 +215,7 @@
         .btn-whatsapp {
             display: inline-block;
             background: var(--whatsapp-btn-bg);
-            color: #fff;
+            color: #fff; /* Cor padrão do texto do botão WhatsApp */
             padding: 16px 28px;
             border-radius: 40px;
             text-decoration: none;
@@ -224,6 +229,10 @@
         .btn-whatsapp:hover {
             background: var(--whatsapp-btn-hover);
             transform: translateY(-3px);
+        }
+
+        .whatsapp-name {
+            color: var(--psicoterapeuta-name-color); /* Cor do nome da psicoterapeuta */
         }
 
         /* Rodapé */
@@ -369,7 +378,7 @@
 
     <header>
         <div class="content">
-            <h1>PABE<br><span>Práticas > Atitude > Bem-Estar</span></h1>
+            <h1 style="color: var(--pabe-text-color);">PABE<br><span style="color: var(--pabe-text-color);">Práticas > Atitude > Bem-Estar</span></h1>
             <a href="#inscricao" class="btn-cta">Quero Participar</a>
         </div>
     </header>
@@ -416,10 +425,10 @@
         <p>Valor promocional do 2º lote: <strong>R$ 62,00</strong> – Inclui reembolso garantido.</p>
         <div class="whatsapp-buttons-container">
             <a class="btn-whatsapp" href="https://wa.me/5541988180624" target="_blank" rel="noopener">
-                WhatsApp Waleska Cruz (41) 98818-0624
+                WhatsApp <span class="whatsapp-name">Waleska Cruz</span> (41) 98818-0624
             </a>
             <a class="btn-whatsapp" href="https://wa.me/5541988180625" target="_blank" rel="noopener">
-                WhatsApp Cybele Lassandro (41) 98818-0625
+                WhatsApp <span class="whatsapp-name">Cybele Lassandro</span> (41) 98818-0625
             </a>
         </div>
     </section>
