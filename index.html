@@ -1,410 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TREINAMENTO PABE: Práticas > Atitude > Bem-Estar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        /* Paleta de Cores Inspirada em imersao.anaclarabastos.com.br */
-        :root {
-            --color-primary: #8a6c5a; /* Tom de marrom suave */
-            --color-secondary: #fdfaf7; /* Fundo off-white para seções */
-            --color-tertiary: #d9b89a; /* Tom de bege/marrom claro */
-            --color-accent: #f2a74c; /* Laranja/dourado de destaque */
-            --color-text-dark: #333333; /* Preto quase puro para textos principais */
-            --color-text-light: #555555; /* Cinza para textos secundários */
-            --color-white: #ffffff; /* Branco puro */
-            --color-border: #e0e0e0; /* Borda bem clara */
-
-            /* Cores para botões e links específicos */
-            --button-primary-bg: #f2a74c; /* Botão principal (laranja/dourado) */
-            --button-primary-hover: #e0973a;
-            --button-secondary-bg: #8a6c5a; /* Botão secundário (marrom suave) */
-            --button-secondary-hover: #7a5c4a;
-            --button-whatsapp-bg: #25d366;
-            --button-whatsapp-hover: #1ebe57;
-
-            /* Fontes (mantendo as suas, mas com ajuste de peso se necessário) */
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Open Sans', sans-serif;
-        }
-
-        /* Reset Básico e Fontes */
-        body {
-            font-family: var(--font-body);
-            background: var(--color-secondary); /* Fundo da página */
-            color: var(--color-text-light);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .container {
-            max-width: 1000px; /* Um pouco mais largo */
-            margin: 0 auto;
-            padding: 0 25px;
-            box-sizing: border-box;
-        }
-
-        /* Cabeçalho (Hero Section) - Com fundo de cor */
-        header {
-            background-color: var(--color-primary); /* Cor principal para o cabeçalho */
-            color: var(--color-white);
-            padding: 80px 0 60px; /* Mais padding para espaçamento */
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra sutil */
-        }
-
-        header .logo {
-            max-width: 200px; /* Ajuste o tamanho do seu logo */
-            height: auto;
-            margin-bottom: 25px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-family: var(--font-heading);
-            font-size: 3.8rem; /* Título principal */
-            font-weight: 700;
-            color: var(--color-white); /* Cor do título principal no header */
-            line-height: 1.1;
-            margin-bottom: 10px;
-        }
-        header h1 span {
-            display: block;
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin-top: 10px;
-            color: var(--color-tertiary); /* Subtítulo com cor mais clara */
-        }
-
-        .trainers-names {
-            font-family: var(--font-heading);
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--color-white); /* Nomes com cor mais clara */
-            margin-top: 20px;
-            margin-bottom: 30px;
-            letter-spacing: 0.5px;
-        }
-
-        .header-description {
-            font-size: 1.25rem;
-            color: var(--color-white); /* Texto branco no header */
-            max-width: 800px;
-            margin: 0 auto 30px;
-            line-height: 1.7;
-        }
-        
-        /* Botão principal no cabeçalho */
-        .btn-main {
-            display: inline-block;
-            background-color: var(--button-primary-bg); /* Cor de destaque */
-            color: var(--color-white);
-            padding: 18px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.4rem;
-            font-weight: 700;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            margin-top: 20px;
-        }
-
-        .btn-main:hover {
-            background-color: var(--button-primary-hover);
-            transform: translateY(-3px);
-        }
-
-        /* Seções de Conteúdo */
-        section {
-            margin-top: 50px;
-            padding: 60px 0; /* Mais padding vertical */
-            background-color: var(--color-white); /* Fundo branco para as seções */
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-
-        section h2 {
-            font-family: var(--font-heading);
-            color: var(--color-text-dark); /* Título de seção escuro */
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        section h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--color-accent); /* Linha de destaque laranja/dourado */
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
-
-        section p {
-            font-size: 1.15rem;
-            color: var(--color-text-dark);
-            max-width: 750px;
-            margin: 20px auto;
-            line-height: 1.7;
-        }
-
-        /* Títulos de sub-seções */
-        section h3 {
-            font-family: var(--font-heading);
-            color: var(--color-primary); /* Subtítulo com a cor marrom suave */
-            font-size: 2rem;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        /* Lista de Benefícios/Itens (como os "quadros" de conteúdo) */
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 30px auto 40px;
-            max-width: 700px;
-        }
-
-        ul li {
-            padding-left: 45px;
-            margin-bottom: 15px;
-            position: relative;
-            font-size: 1.1rem;
-            color: var(--color-text-dark);
-            text-align: left;
-            line-height: 1.5;
-        }
-
-        ul li::before {
-            content: "✓"; /* Ícone de check */
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: var(--color-accent); /* Cor de destaque para o check */
-            font-weight: bold;
-            font-size: 1.8rem;
-            line-height: 1;
-        }
-
-        /* Seção de Chamada para Ação (CTA Final) */
-        .call-to-action {
-            padding: 60px 40px;
-            background-color: var(--color-primary); /* Fundo com a cor marrom principal */
-            color: var(--color-white);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            margin-bottom: 50px;
-        }
-
-        .call-to-action p {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--color-white);
-            line-height: 1.4;
-        }
-
-        .whatsapp-instruction {
-            font-size: 1.3rem;
-            font-weight: 500;
-            margin-bottom: 15px;
-            color: var(--color-white);
-        }
-
-        .btn-whatsapp {
-            display: inline-block;
-            background-color: var(--button-whatsapp-bg);
-            color: white;
-            padding: 18px 40px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: 700;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            margin-bottom: 15px;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: var(--button-whatsapp-hover);
-            transform: translateY(-3px);
-        }
-
-        .whatsapp-buttons-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            margin-top: 25px;
-            margin-bottom: 30px;
-        }
-
-        .whatsapp-note {
-            font-size: 0.9rem !important;
-            margin-top: 15px !important;
-            color: rgba(255, 255, 255, 0.8) !important;
-        }
-
-        /* Rodapé */
-        footer {
-            text-align: center;
-            padding: 30px;
-            font-size: 0.95rem;
-            color: var(--color-text-light);
-            border-top: 1px solid var(--color-border);
-            background-color: var(--color-white);
-            margin-top: 0;
-        }
-
-        /* Responsividade */
-        @media (max-width: 992px) {
-            .container { padding: 0 20px; }
-            header { padding: 60px 0 40px; }
-            header h1 { font-size: 3.2rem; }
-            header h1 span { font-size: 1.4rem; }
-            .trainers-names { font-size: 1.1rem; }
-            .header-description { font-size: 1.1rem; }
-            .btn-main { font-size: 1.2rem; padding: 15px 35px; }
-            section { margin-top: 40px; padding: 50px 0; }
-            section h2 { font-size: 2.4rem; }
-            section h3 { font-size: 1.8rem; }
-            section p, ul li { font-size: 1.05rem; }
-            ul li { padding-left: 40px; }
-            ul li::before { font-size: 1.6rem; }
-            .call-to-action p { font-size: 1.6rem; }
-            .whatsapp-instruction { font-size: 1.2rem; }
-            .btn-whatsapp { font-size: 1.1rem; padding: 16px 35px; }
-        }
-
-        @media (max-width: 768px) {
-            header { padding: 40px 0 30px; }
-            header h1 { font-size: 2.5rem; }
-            header h1 span { font-size: 1.2rem; }
-            .trainers-names { font-size: 1rem; }
-            .header-description { font-size: 1rem; }
-            .btn-main { font-size: 1.1rem; padding: 12px 30px; }
-            section { margin-top: 30px; padding: 40px 0; }
-            section h2 { font-size: 2rem; }
-            section h3 { font-size: 1.6rem; }
-            section p, ul li { font-size: 0.95rem; }
-            ul li { padding-left: 35px; }
-            ul li::before { font-size: 1.4rem; }
-            .call-to-action { padding: 40px 20px; }
-            .call-to-action p { font-size: 1.4rem; }
-            .whatsapp-instruction { font-size: 1rem; }
-            .btn-whatsapp { font-size: 1rem; padding: 14px 30px; }
-        }
-
-        @media (max-width: 480px) {
-            .container { padding: 0 15px; }
-            header h1 { font-size: 2rem; }
-            header h1 span { font-size: 1rem; }
-            .trainers-names { font-size: 0.9rem; }
-            .header-description { font-size: 0.9rem; }
-            .btn-main { font-size: 1rem; padding: 10px 25px; }
-            section { margin-top: 20px; padding: 30px 0; }
-            section h2 { font-size: 1.6rem; }
-            section h3 { font-size: 1.3rem; }
-            section p, ul li { font-size: 0.9rem; }
-            ul li { padding-left: 30px; }
-            ul li::before { font-size: 1.2rem; }
-            .call-to-action { padding: 30px 15px; }
-            .call-to-action p { font-size: 1.2rem; }
-            .whatsapp-instruction { font-size: 0.9rem; }
-            .btn-whatsapp { font-size: 0.9rem; padding: 12px 25px; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Imersão Clínica em Luto Não Reconhecido</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #8a6c5a;
+      --accent: #f2a74c;
+      --bg-light: #fdfaf7;
+      --text-dark: #333;
+      --text-light: #555;
+      --btn-bg: #f2a74c;
+      --btn-hover: #e0973a;
+      --font-head: 'Montserrat', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family: var(--font-body); color: var(--text-dark); background: var(--bg-light);}
+    header{background: url('hero-placeholder.jpg') center/cover fixed no-repeat; position: relative; color: white; text-align: center; padding: 120px 20px;}
+    header::after{content:''; position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);}
+    header .content{position: relative; z-index:1; max-width:800px; margin:auto;}
+    header h1{font-family: var(--font-head); font-size:3.2rem; margin-bottom:10px;}
+    header h1 span{display:block;font-size:1.5rem; color: var(--bg-light);}
+    header p{font-size:1.25rem; margin-bottom:30px;}
+    .btn-cta{display:inline-block;background:var(--btn-bg);color:#fff;padding:18px 36px;border-radius:50px;font-size:1.2rem;font-weight:600;text-decoration:none;transition:transform .2s,background .3s;}
+    .btn-cta:hover{background:var(--btn-hover);transform:translateY(-3px);}
+    section{padding:80px 20px; max-width:1000px; margin:0 auto;}
+    section:nth-child(even){background:#fff;}
+    h2{font-family: var(--font-head); font-size:2.6rem; text-align:center; margin-bottom:30px; position:relative; color:var(--text-dark);}
+    h2::after{content:''; position:absolute;width:80px;height:4px;background:var(--accent); bottom:-10px; left:50%;transform:translateX(-50%);}
+    p{font-size:1.15rem; line-height:1.7; margin-bottom:25px; text-align:center;}
+    ul{list-style:none;padding:0;max-width:700px;margin:30px auto;}
+    ul li{position:relative;padding-left:40px;margin-bottom:15px;font-size:1.1rem;}
+    ul li::before{content:'✔'; position:absolute;left:0;top:0;font-size:1.4rem;color:var(--accent);}
+    .cta-section{background:var(--primary); color:#fff; text-align:center; padding:60px 20px;border-radius:10px;}
+    .cta-section h3{font-family:var(--font-head); font-size:2rem; margin-bottom:20px;}
+    .btn-whatsapp{display:inline-block;background:#25d366;color:#fff;padding:16px 28px;border-radius:40px;text-decoration:none;font-size:1.15rem;font-weight:600;margin:10px 0;transition:transform .2s;}
+    .btn-whatsapp:hover{transform:translateY(-3px);}
+    footer{text-align:center;padding:40px 20px;font-size:0.9rem;color:var(--text-light);}
+    @media(max-width:768px){
+      header h1{font-size:2.6rem;} header p{font-size:1.1rem;}
+      h2{font-size:2rem;} p, ul li{font-size:1rem;}
+    }
+  </style>
 </head>
 <body>
 
-<div id="top-of-page"></div>
-
 <header>
-    <div class="container header-content">
-        <h1>TREINAMENTO PABE<span>Práticas &gt; Atitude &gt; Bem-Estar</span></h1> 
-        <p class="trainers-names">Waleska Cruz e Cybele Lassandro</p>
-        <p class="header-description">
-            O **TREINAMENTO PABE** é uma jornada transformadora focada em te equipar com **Práticas** eficientes, fortalecer sua **Atitude** positiva e promover um profundo **Bem-Estar**. Descubra um espaço de aprendizado e desenvolvimento para aplicar a Psicologia Positiva no seu dia a dia. É um convite para você florescer em todas as áreas da sua vida.
-        </p>
-        <a href="#contato" class="btn-main">Quero Florescer!</a>
-    </div>
+  <div class="content">
+    <h1>Imersão Clínica em Luto Não Reconhecido<br><span>Presença > Ética > Cuidado</span></h1>
+    <p>Um encontro transformador para aprimorar sua escuta clínica e acolher o luto invisível com mais segurança.</p>
+    <a href="#inscricao" class="btn-cta">Quero Participar</a>
+  </div>
 </header>
 
-<section class="container">
-    <h2>🎯 Seu Caminho para o Bem-Estar e Crescimento!</h2>
-    <p>
-        Neste treinamento, você aprenderá a identificar e utilizar suas forças de caráter, cultivar emoções positivas e construir um propósito de vida mais significativo. É um convite para você florescer em todas as áreas da sua vida.
-    </p>
-
-    <h3>🌿 O que você vai desenvolver no TREINAMENTO PABE</h3>
-    <ul>
-        <li>Aprender técnicas e exercícios para aumentar o bem-estar diário</li>
-        <li>Desenvolver uma mentalidade de crescimento e resiliência</li>
-        <li>Identificar e potencializar suas forças pessoais</li>
-        <li>Cultivar gratidão, otimismo e esperança</li>
-        <li>Construir relacionamentos mais positivos e significativos</li>
-        <li>Encontrar e viver com mais propósito e significado</li>
-    </ul>
+<section id="sobre">
+  <h2>Por que essa imersão importa?</h2>
+  <p>Essa imersão é um convite para aprimorar sua escuta e presença, oferecendo apoio genuíno em casos de perdas e lutos não reconhecidos. Essas são perdas reais, muitas vezes invisíveis, que causam sofrimento silencioso dentro e fora da clínica.</p>
+  <ul>
+    <li>Identificar o luto mesmo quando não é verbalizado.</li>
+    <li>Validar emoções sem minimizar nem invadir.</li>
+    <li>Evitar erros éticos e garantir vínculo terapêutico.</li>
+    <li>Aprender intervenções iniciais seguras e eficazes.</li>
+  </ul>
 </section>
 
-<section class="container">
-    <h2>✨ Conteúdo Adicional da Imersão</h2>
-    <p>
-        Para enriquecer ainda mais sua jornada, oferecemos módulos adicionais com ferramentas e insights práticos.
-    </p>
-    
-    <h3>🚀 Bônus Especiais:</h3>
-    <ul>
-        <li>**Módulo 1:** Introdução à Psicologia Positiva e seus pilares.</li>
-        <li>**Módulo 2:** Ferramentas de autoavaliação e identificação de forças.</li>
-        <li>**Módulo 3:** Práticas de atenção plena e gratidão para o dia a dia.</li>
-        <li>**Módulo 4:** Construindo relacionamentos saudáveis e comunicação efetiva.</li>
-        <li>**Módulo 5:** Definindo metas e cultivando um propósito de vida.</li>
-        <li>**Material de Apoio:** Acesso exclusivo a um workbook interativo e leituras complementares.</li>
-    </ul>
+<section>
+  <h2>O que você vai aprender</h2>
+  <ul>
+    <li>Reconhecimento clínico do luto invisível.</li>
+    <li>Validação da dor e escuta ética.</li>
+    <li>Distinção entre luto e sofrimento generalizado.</li>
+    <li>Caminhos de intervenção conscientes e acolhedores.</li>
+    <li>Prevenção de evasão e retraumatização.</li>
+  </ul>
 </section>
 
-<section class="container">
-    <h2>🤝 Nossas Treinadoras</h2>
-    <p>
-        **Waleska Cruz e Cybele Lassandro** são psicólogas com vasta experiência em Psicologia Positiva e desenvolvimento humano. Com uma abordagem prática e acolhedora, elas guiarão você nesta jornada de autoconhecimento e florescimento.
-    </p>
-    <p>
-        Ambas possuem certificações e são apaixonadas por compartilhar ferramentas que transformam vidas. Prepare-se para um aprendizado leve, profundo e transformador.
-    </p>
+<section>
+  <h2>Detalhes da jornada</h2>
+  <p>📅 Dia 09 de agosto – Ao vivo e online<br>⏰ Das 09h às 16h<br>🎓 Voltado para psicólogos e estudantes de psicologia com interesse em luto clínico</p>
 </section>
 
+<section>
+  <h2>O que você terá acesso</h2>
+  <ul>
+    <li>Encontro formativo com Ana Clara Bastos (Dra. Psicologia)</li>
+    <li>Workbook exclusivo com práticas e reflexões</li>
+    <li>Materiais de aquecimento pré-imersão</li>
+    <li>Garantia de reembolso em até 7 dias</li>
+  </ul>
+</section>
 
-<section id="contato" class="call-to-action container">
-    <p>✨ Pronto para iniciar sua jornada PABE?</p>
-    <p class="whatsapp-instruction">Fale conosco pelos telefones:</p>
-    <div class="whatsapp-buttons-container">
-        <a class="btn-whatsapp" href="https://wa.me/5541988180624" target="_blank" rel="noopener">
-            WhatsApp Waleska Cruz (41) 98818-0624
-        </a>
-        <a class="btn-whatsapp" href="https://wa.me/5541988180625" target="_blank" rel="noopener">
-            WhatsApp Cybele Lassandro (41) 98818-0625
-        </a>
-    </div>
-    <p class="whatsapp-note">Clique no número desejado para iniciar a conversa.</p>
+<section id="inscricao" class="cta-section">
+  <h3>Inscrições abertas – Garanta seu lugar</h3>
+  <p>Valor promocional do 2º lote: <strong>R$ 62,00</strong> – Inclui reembolso garantido.</p>
+  <a href="https://wa.me/55419XXXXXXX" class="btn-whatsapp" target="_blank">WhatsApp Ana Clara</a>
 </section>
 
 <footer>
-    <div class="container">
-        &copy; 2025 TREINAMENTO PABE - Todos os direitos reservados
-    </div>
+  <p>&copy; 2025 Imersão Clínica em Luto Não Reconhecido – Todos os direitos reservados</p>
 </footer>
 
 </body>
