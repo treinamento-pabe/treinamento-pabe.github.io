@@ -1,125 +1,496 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Imersão Clínica em Luto Não Reconhecido</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #8a6c5a;
-      --accent: #f2a74c;
-      --bg-light: #fdfaf7;
-      --text-dark: #333;
-      --text-light: #555;
-      --btn-bg: #f2a74c;
-      --btn-hover: #e0973a;
-      --font-head: 'Montserrat', sans-serif;
-      --font-body: 'Open Sans', sans-serif;
-    }
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family: var(--font-body); color: var(--text-dark); background: var(--bg-light);}
-    header{background: url('hero-placeholder.jpg') center/cover fixed no-repeat; position: relative; color: white; text-align: center; padding: 120px 20px;}
-    header::after{content:''; position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);}
-    header .content{position: relative; z-index:1; max-width:800px; margin:auto;}
-    header h1{font-family: var(--font-head); font-size:3.2rem; margin-bottom:10px;}
-    header h1 span{display:block;font-size:1.5rem; color: var(--bg-light);}
-    header p{font-size:1.25rem; margin-bottom:30px;}
-    .btn-cta{display:inline-block;background:var(--btn-bg);color:#fff;padding:18px 36px;border-radius:50px;font-size:1.2rem;font-weight:600;text-decoration:none;transition:transform .2s,background .3s;}
-    .btn-cta:hover{background:var(--btn-hover);transform:translateY(-3px);}
-    section{padding:80px 20px; max-width:1000px; margin:0 auto;}
-    section:nth-child(even){background:#fff;}
-    h2{font-family: var(--font-head); font-size:2.6rem; text-align:center; margin-bottom:30px; position:relative; color:var(--text-dark);}
-    h2::after{content:''; position:absolute;width:80px;height:4px;background:var(--accent); bottom:-10px; left:50%;transform:translateX(-50%);}
-    p{font-size:1.15rem; line-height:1.7; margin-bottom:25px; text-align:center;}
-    ul{list-style:none;padding:0;max-width:700px;margin:30px auto;}
-    ul li{position:relative;padding-left:40px;margin-bottom:15px;font-size:1.1rem;}
-    ul li::before{content:'✔'; position:absolute;left:0;top:0;font-size:1.4rem;color:var(--accent);}
-    .cta-section{background:var(--primary); color:#fff; text-align:center; padding:60px 20px;border-radius:10px;}
-    .cta-section h3{font-family:var(--font-head); font-size:2rem; margin-bottom:20px;}
-    .btn-whatsapp{display:inline-block;background:#25d366;color:#fff;padding:16px 28px;border-radius:40px;text-decoration:none;font-size:1.15rem;font-weight:600;margin:10px 0;transition:transform .2s;}
-    .btn-whatsapp:hover{transform:translateY(-3px);}
-    /* Novo estilo para o container dos botões do WhatsApp */
-    .whatsapp-buttons-container {
-        display: flex;
-        flex-direction: column; /* Botões um abaixo do outro */
-        align-items: center; /* Centralizar os botões */
-        gap: 15px; /* Espaço entre os botões */
-        margin-top: 25px;
-        margin-bottom: 30px;
-    }
-    footer{text-align:center;padding:40px 20px;font-size:0.9rem;color:var(--text-light);}
-    @media(max-width:768px){
-      header h1{font-size:2.6rem;} header p{font-size:1.1rem;}
-      h2{font-size:2rem;} p, ul li{font-size:1rem;}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imersão Clínica em Luto Não Reconhecido</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Variáveis de Cores e Fontes - Inspiradas em imersao.anaclarabastos.com.br */
+        :root {
+            --primary: #8a6c5a; /* Marrom suave, principal */
+            --accent: #f2a74c; /* Laranja/dourado de destaque */
+            --bg-light: #fdfaf7; /* Fundo off-white das seções claras */
+            --text-dark: #333333; /* Texto escuro */
+            --text-light: #555555; /* Texto cinza claro */
+            --btn-bg: #f2a74c; /* Fundo do botão CTA principal */
+            --btn-hover: #e0973a; /* Hover do botão CTA principal */
+            --whatsapp-btn-bg: #25d366; /* Fundo do botão WhatsApp */
+            --whatsapp-btn-hover: #1ebe57; /* Hover do botão WhatsApp */
+            --font-head: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+
+        /* Reset Básico e Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background: var(--bg-light);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased; /* Suaviza fontes no Webkit */
+            -moz-osx-font-smoothing: grayscale; /* Suaviza fontes no Firefox */
+        }
+
+        /* Container para alinhar imagem e texto no topo */
+        .image-text-container {
+            display: flex;
+            align-items: center; /* Alinha verticalmente */
+            max-width: 1000px; /* Largura máxima do conteúdo */
+            margin: 30px auto; /* Centraliza e adiciona margem vertical */
+            padding: 0 20px; /* Padding nas laterais */
+        }
+
+        .main-image {
+            display: block;
+            max-width: 40%; /* Imagem ocupa 40% da largura do contêiner */
+            height: auto;
+            max-height: 200px; /* Altura máxima da imagem */
+            margin-right: 30px; /* Espaçamento entre imagem e texto */
+            border-radius: 5px; /* Bordas levemente arredondadas */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        }
+
+        .text-side {
+            flex-grow: 1; /* O texto ocupa o restante do espaço */
+            font-size: 1.1rem;
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        /* Cabeçalho (Hero Section) */
+        header {
+            /* Use uma imagem de fundo real ou mantenha o placeholder */
+            background: url('hero-placeholder.jpg') center/cover fixed no-repeat; 
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra para o header */
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Overlay escuro */
+            z-index: 0;
+        }
+
+        header .content {
+            position: relative;
+            z-index: 1; /* Garante que o conteúdo fique acima do overlay */
+            max-width: 800px;
+            margin: auto;
+        }
+
+        header h1 {
+            font-family: var(--font-head);
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header h1 span {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--bg-light); /* Cor do subtítulo no header */
+            font-weight: 600;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background: var(--btn-bg);
+            color: #fff;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform .2s ease, background .3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra para o botão */
+        }
+
+        .btn-cta:hover {
+            background: var(--btn-hover);
+            transform: translateY(-3px);
+        }
+
+        /* Seções de Conteúdo */
+        section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 40px auto; /* Adiciona margem entre as seções */
+            text-align: center;
+            background: #fff; /* Fundo branco para todas as seções */
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Sombra sutil para as seções */
+        }
+
+        section:first-of-type {
+            margin-top: 0; /* Remove margem superior da primeira seção após a imagem/header */
+        }
+
+        h2 {
+            font-family: var(--font-head);
+            font-size: 2.6rem;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        section p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            max-width: 750px; /* Limita largura do parágrafo para melhor leitura */
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        section ul {
+            list-style: none;
+            padding: 0;
+            max-width: 700px;
+            margin: 30px auto;
+            text-align: left;
+        }
+
+        section ul li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: var(--text-dark);
+        }
+
+        section ul li::before {
+            content: '✔'; /* Símbolo de check */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.4rem;
+            color: var(--accent); /* Cor do check */
+            font-weight: bold;
+        }
+
+        /* Seção de Chamada para Ação (CTA Final) */
+        .cta-section {
+            background: var(--primary); /* Fundo com a cor principal */
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Sombra mais forte */
+            margin-bottom: 50px; /* Mais espaço antes do rodapé */
+        }
+
+        .cta-section h3 {
+            font-family: var(--font-head);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .whatsapp-buttons-container {
+            display: flex;
+            flex-direction: column; /* Botões um abaixo do outro */
+            align-items: center; /* Centralizar os botões */
+            gap: 15px; /* Espaço entre os botões */
+            margin-top: 25px;
+            margin-bottom: 30px;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background: var(--whatsapp-btn-bg);
+            color: #fff;
+            padding: 16px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: 600;
+            transition: transform .2s ease, background .3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            min-width: 280px; /* Garante uma largura mínima para os botões */
+        }
+
+        .btn-whatsapp:hover {
+            background: var(--whatsapp-btn-hover);
+            transform: translateY(-3px);
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            border-top: 1px solid rgba(0,0,0,0.05); /* Borda superior sutil */
+            background: #fff;
+        }
+
+        /* Media Queries para Responsividade */
+        @media (max-width: 992px) {
+            .image-text-container {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                margin-top: 20px;
+                padding: 0 15px;
+            }
+            .main-image {
+                max-width: 60%;
+                margin-right: 0;
+                margin-bottom: 25px;
+                max-height: 180px;
+            }
+            .text-side {
+                font-size: 1rem;
+                text-align: center;
+            }
+            header {
+                padding: 100px 15px;
+            }
+            header h1 {
+                font-size: 2.8rem;
+            }
+            header h1 span {
+                font-size: 1.3rem;
+            }
+            header p {
+                font-size: 1.1rem;
+            }
+            .btn-cta {
+                font-size: 1.1rem;
+                padding: 15px 30px;
+            }
+            section {
+                padding: 60px 15px;
+                margin: 30px auto;
+            }
+            h2 {
+                font-size: 2.2rem;
+            }
+            section p, section ul li {
+                font-size: 1rem;
+            }
+            section ul li {
+                padding-left: 35px;
+            }
+            section ul li::before {
+                font-size: 1.2rem;
+            }
+            .cta-section {
+                padding: 50px 15px;
+            }
+            .cta-section h3 {
+                font-size: 1.8rem;
+            }
+            .btn-whatsapp {
+                font-size: 1.05rem;
+                padding: 14px 25px;
+                min-width: unset; /* Remove min-width em telas menores */
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 80px 15px;
+            }
+            header h1 {
+                font-size: 2.4rem;
+            }
+            header h1 span {
+                font-size: 1.1rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            .btn-cta {
+                font-size: 1rem;
+                padding: 12px 25px;
+            }
+            section {
+                padding: 50px 15px;
+                margin: 25px auto;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            section p, section ul li {
+                font-size: 0.95rem;
+            }
+            .main-image {
+                max-width: 90%;
+                max-height: 150px;
+            }
+            .text-side {
+                font-size: 0.95rem;
+            }
+            .cta-section h3 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            header h1 span {
+                font-size: 0.9rem;
+            }
+            header p {
+                font-size: 0.9rem;
+            }
+            .btn-cta {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+            section {
+                padding: 40px 10px;
+                margin: 20px auto;
+            }
+            h2 {
+                font-size: 1.6rem;
+                margin-bottom: 20px;
+            }
+            h2::after {
+                width: 60px;
+                height: 3px;
+                bottom: -8px;
+            }
+            section p, section ul li {
+                font-size: 0.85rem;
+            }
+            section ul li {
+                padding-left: 30px;
+            }
+            section ul li::before {
+                font-size: 1.1rem;
+            }
+            .main-image {
+                max-height: 120px;
+            }
+            .text-side {
+                font-size: 0.9rem;
+            }
+            .cta-section h3 {
+                font-size: 1.4rem;
+            }
+            .btn-whatsapp {
+                font-size: 0.9rem;
+                padding: 12px 20px;
+            }
+            footer {
+                padding: 20px 10px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<img src="Esta.png" alt="Imagem Principal do Treinamento PABE" style="display: block; width: 100%; height: auto; margin-bottom: 30px;">
-
-<header>
-  <div class="content">
-    <h1>Imersão Clínica em Luto Não Reconhecido<br><span>Presença > Ética > Cuidado</span></h1>
-    <p>Um encontro transformador para aprimorar sua escuta clínica e acolher o luto invisível com mais segurança.</p>
-    <a href="#inscricao" class="btn-cta">Quero Participar</a>
-  </div>
-</header>
-
-<section id="sobre">
-  <h2>Por que essa imersão importa?</h2>
-  <p>Essa imersão é um convite para aprimorar sua escuta e presença, oferecendo apoio genuíno em casos de perdas e lutos não reconhecidos. Essas são perdas reais, muitas vezes invisíveis, que causam sofrimento silencioso dentro e fora da clínica.</p>
-  <ul>
-    <li>Identificar o luto mesmo quando não é verbalizado.</li>
-    <li>Validar emoções sem minimizar nem invadir.</li>
-    <li>Evitar erros éticos e garantir vínculo terapêutico.</li>
-    <li>Aprender intervenções iniciais seguras e eficazes.</li>
-  </ul>
-</section>
-
-<section>
-  <h2>O que você vai aprender</h2>
-  <ul>
-    <li>Reconhecimento clínico do luto invisível.</li>
-    <li>Validação da dor e escuta ética.</li>
-    <li>Distinção entre luto e sofrimento generalizado.</li>
-    <li>Caminhos de intervenção conscientes e acolhedores.</li>
-    <li>Prevenção de evasão e retraumatização.</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Detalhes da jornada</h2>
-  <p>📅 Dia 09 de agosto – Ao vivo e online<br>⏰ Das 09h às 16h<br>🎓 Voltado para psicólogos e estudantes de psicologia com interesse em luto clínico</p>
-</section>
-
-<section>
-  <h2>O que você terá acesso</h2>
-  <ul>
-    <li>Encontro formativo com Ana Clara Bastos (Dra. Psicologia)</li>
-    <li>Workbook exclusivo com práticas e reflexões</li>
-    <li>Materiais de aquecimento pré-imersão</li>
-    <li>Garantia de reembolso em até 7 dias</li>
-  </ul>
-</section>
-
-<section id="inscricao" class="cta-section">
-  <h3>Inscrições abertas – Garanta seu lugar</h3>
-  <p>Valor promocional do 2º lote: <strong>R$ 62,00</strong> – Inclui reembolso garantido.</p>
-    <div class="whatsapp-buttons-container">
-        <a class="btn-whatsapp" href="https://wa.me/5541988180624" target="_blank" rel="noopener">
-            WhatsApp Waleska Cruz (41) 98818-0624
-        </a>
-        <a class="btn-whatsapp" href="https://wa.me/5541988180625" target="_blank" rel="noopener">
-            WhatsApp Cybele Lassandro (41) 98818-0625
-        </a>
+    <div class="image-text-container">
+        <img src="Esta.png" alt="Imagem Principal" class="main-image">
+        <div class="text-side">
+            <p><strong>Psicoterapia: Um espaço de acolhimento e transformação pessoal.</strong> Através do acompanhamento profissional, você poderá explorar seus sentimentos, superar desafios e desenvolver seu potencial para uma vida mais plena e significativa. Busque o autoconhecimento e invista em seu bem-estar emocional.</p>
+        </div>
     </div>
-</section>
 
-<footer>
-  <p>&copy; 2025 Imersão Clínica em Luto Não Reconhecido – Todos os direitos reservados</p>
-</footer>
+    <header>
+        <div class="content">
+            <h1>Imersão Clínica em Luto Não Reconhecido<br><span>Presença > Ética > Cuidado</span></h1>
+            <p>Um encontro transformador para aprimorar sua escuta clínica e acolher o luto invisível com mais segurança.</p>
+            <a href="#inscricao" class="btn-cta">Quero Participar</a>
+        </div>
+    </header>
+
+    <section id="sobre">
+        <h2>Por que essa imersão importa?</h2>
+        <p>Essa imersão é um convite para aprimorar sua escuta e presença, oferecendo apoio genuíno em casos de perdas e lutos não reconhecidos. Essas são perdas reais, muitas vezes invisíveis, que causam sofrimento silencioso dentro e fora da clínica.</p>
+        <ul>
+            <li>Identificar o luto mesmo quando não é verbalizado.</li>
+            <li>Validar emoções sem minimizar nem invadir.</li>
+            <li>Evitar erros éticos e garantir vínculo terapêutico.</li>
+            <li>Aprender intervenções iniciais seguras e eficazes.</li>
+        </ul>
+    </section>
+
+    <section id="o-que-vai-aprender">
+        <h2>O que você vai aprender</h2>
+        <ul>
+            <li>Reconhecimento clínico do luto invisível.</li>
+            <li>Validação da dor e escuta ética.</li>
+            <li>Distinção entre luto e sofrimento generalizado.</li>
+            <li>Caminhos de intervenção conscientes e acolhedores.</li>
+            <li>Prevenção de evasão e retraumatização.</li>
+        </ul>
+    </section>
+
+    <section id="detalhes-da-imersao">
+        <h2>Detalhes da jornada</h2>
+        <p>📅 Dia 09 de agosto – Ao vivo e online<br>⏰ Das 09h às 16h<br>🎓 Voltado para psicólogos e estudantes de psicologia com interesse em luto clínico</p>
+    </section>
+
+    <section id="o-que-terá-acesso">
+        <h2>O que você terá acesso</h2>
+        <ul>
+            <li>Encontro formativo com Ana Clara Bastos (Dra. Psicologia)</li>
+            <li>Workbook exclusivo com práticas e reflexões</li>
+            <li>Materiais de aquecimento pré-imersão</li>
+            <li>Garantia de reembolso em até 7 dias</li>
+        </ul>
+    </section>
+
+    <section id="inscricao" class="cta-section">
+        <h3>Inscrições abertas – Garanta seu lugar</h3>
+        <p>Valor promocional do 2º lote: <strong>R$ 62,00</strong> – Inclui reembolso garantido.</p>
+        <div class="whatsapp-buttons-container">
+            <a class="btn-whatsapp" href="https://wa.me/5541988180624" target="_blank" rel="noopener">
+                WhatsApp Waleska Cruz (41) 98818-0624
+            </a>
+            <a class="btn-whatsapp" href="https://wa.me/5541988180625" target="_blank" rel="noopener">
+                WhatsApp Cybele Lassandro (41) 98818-0625
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Imersão Clínica em Luto Não Reconhecido – Todos os direitos reservados</p>
+    </footer>
 
 </body>
 </html>
