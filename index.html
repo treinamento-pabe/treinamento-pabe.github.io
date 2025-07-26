@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TREINAMENTO PABE: Práticas &gt; Atitude &gt; Bem-Estar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Cores Neutras e Profissionais para PABE */
+        :root {
+            --primary-bg: #f9f9f9; /* Fundo principal muito claro, quase branco */
+            --secondary-bg: #ececec; /* Fundo secundário para seções de destaque, um cinza claro */
+            --text-dark: #333333; /* Texto principal escuro (parágrafos) */
+            --text-medium: #555555; /* Texto secundário (parágrafos mais claros) */
+            --text-light: #888888; /* Texto mais suave, como rodapé */
+            
+            --main-title-color: #8d7c6f; /* Cor do título principal (h1) */
+            --subtitle-color: #d8726a; /* Cor dos subtítulos (h2, h3) e acentos */
+
+            --border-color: #dddddd; /* Borda cinza clara */
+            --white: #ffffff; /* Branco puro */
+        }
+
+        /* Reset Básico e Fontes */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-medium);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        /* Cabeçalho e Título Principal */
+        header {
+            background-color: var(--secondary-bg);
+            color: var(--main-title-color);
+            text-align: center;
+            padding: 50px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; /* Centraliza os itens horizontalmente */
+            justify-content: center; /* Centraliza os itens verticalmente */
+        }
+
+        .header-content {
+            max-width: 100%;
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            letter-spacing: 1.5px;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.08);
+            line-height: 1.2;
+            color: var(--main-title-color);
+            text-align: center; 
+        }
+        header h1 span {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 10px;
+            color: var(--main-title-color);
+            white-space: nowrap; 
+        }
+
+        /* Nomes das treinadoras */
+        .trainers-names {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--subtitle-color); 
+            margin-top: 15px; 
+            margin-bottom: 0; 
+            text-align: center;
+        }
+
+
+        /* Navegação */
+        nav {
+            background-color: var(--white);
+            text-align: center;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 12px 25px;
+            margin: 0 15px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary-bg);
+            color: var(--text-dark);
+        }
+
+        /* Seções de Conteúdo */
+        section {
+            margin-bottom: 60px;
+            padding: 30px 0 30px 0; 
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--subtitle-color);
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background-color: var(--subtitle-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        section h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--subtitle-color);
+            font-size: 2.2rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 6px solid var(--subtitle-color);
+            padding-left: 20px;
+            text-align: left;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        p {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            text-align: center;
+            display: inline-block;
+            max-width: 800px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 30px; 
+        }
+
+        ul li {
+            padding-left: 45px;
+            margin-bottom: 18px;
+            position: relative;
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            display: block;
+            text-align: left;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--subtitle-color);
+            font-weight: bold;
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
+        ul li:last-child {
+            margin-bottom: 40px; 
+        }
+
+        /* Chamada para Ação (CTA) */
+        .call-to-action {
+            text-align: center;
+            margin-top: 50px; 
+            padding: 60px 40px;
+            background-color: var(--secondary-bg);
+            color: var(--text-dark);
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+        }
+
+        .call-to-action p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 10px; 
+            color: var(--subtitle-color);
+            font-weight: 700;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25d366;
+            color: white;
+            padding: 20px 45px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 1.6rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-weight: 700;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebe57;
+            transform: translateY(-4px);
+        }
+
+        /* Container para múltiplos botões de WhatsApp */
+        .whatsapp-buttons-container {
+            display: flex;
+            flex-direction: column; 
+            align-items: center;   
+            gap: 15px;             
+            margin-top: 25px;      
+            margin-bottom: 30px;   
+        }
+
+        /* Texto de instrução para os botões */
+        .whatsapp-instruction {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem; 
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0; 
+        }
+
+        /* Nota pequena abaixo dos botões */
+        .whatsapp-note {
+            font-size: 0.9rem !important; 
+            margin-top: 20px !important; 
+            color: var(--text-light) !important; 
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 1rem;
+            color: var(--text-light);
+            border-top: 1px solid var(--border-color);
+            margin-top: 50px; /* ALTERADO AQUI: Diminuído de 80px para 50px */
+            background-color: var(--white);
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .container {
+                padding: 0 40px;
+            }
+            header h1 {
+                font-size: 3.5rem;
+            }
+            header h1 span {
+                font-size: 1.6rem;
+            }
+            .trainers-names { 
+                font-size: 1.2rem;
+            }
+            .whatsapp-instruction { 
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Oculta toda a navegação para mobile/tablet em pé */
+            nav { 
+                display: none; 
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+            header h1 {
+                font-size: 2.8rem;
+                text-align: center;
+            }
+            header h1 span {
+                font-size: 1.4rem;
+                white-space: normal;
+            }
+            .trainers-names { 
+                font-size: 1.1rem;
+                margin-top: 10px;
+            }
+            section {
+                padding: 20px 15px 20px 15px; 
+                margin-top: 25px;
+            }
+            .call-to-action {
+                margin-top: 40px; 
+            }
+            /* **NOVO AQUI:** Ajusta a margem superior do rodapé para telas pequenas */
+            footer {
+                margin-top: 40px; 
+            }
+            section h2 {
+                font-size: 2.2rem;
+            }
+            section h3 {
+                font-size: 1.8rem;
+                text-align: left;
+                display: block;
+            }
+            p, ul li {
+                font-size: 1.1rem;
+            }
+            ul li {
+                max-width: 95%;
+                padding-left: 35px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            ul li::before {
+                left: 0;
+                font-size: 1.4rem;
+            }
+            ul li:last-child {
+                margin-bottom: 30px;
+            }
+            .call-to-action {
+                padding: 30px 20px;
+            }
+            .call-to-action p {
+                font-size: 1.6rem;
+            }
+            .btn-whatsapp {
+                font-size: 1.2rem;
+                padding: 14px 28px;
+            }
+            .whatsapp-instruction { 
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            header h1 span {
+                font-size: 1.1rem;
+            }
+            .trainers-names { 
+                font-size: 1rem;
+            }
+            section h2 {
+                font-size: 1.8rem;
+            }
+            section h3 {
+                font-size: 1.4rem;
+            }
+            p, ul li {
+                font-size: 1rem;
+            }
+            ul li::before {
+                font-size: 1.2rem;
+            }
+            ul li:last-child {
+                margin-bottom: 20px;
+            }
+            .call-to-action {
+                padding: 30px 20px;
+            }
+            .call-to-action p {
+                font-size: 1.3rem;
+            }
+            .btn-whatsapp {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+            .whatsapp-instruction { 
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="top-of-page"></div>
+
+<header>
+    <div class="container header-content">
+        <h1>TREINAMENTO PABE<span>Práticas &gt; Atitude &gt; Bem-Estar</span></h1> 
+        <p class="trainers-names">Waleska Cruz e Cybele Lassandro</p>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <a href="#top-of-page">Início</a>
+        <a href="#contato">Contato</a>
+    </div>
+</nav>
+
+<section class="container">
+    <h2>🎯 Seu Caminho para o Bem-Estar e Crescimento!</h2>
+    <p>
+        O **TREINAMENTO PABE** é uma jornada transformadora focada em te equipar com **Práticas** eficientes, fortalecer sua **Atitude** positiva e promover um profundo **Bem-Estar**. Descubra um espaço de aprendizado e desenvolvimento para aplicar a Psicologia Positiva no seu dia a dia.
+    </p>
+    <p>
+        Neste treinamento, você aprenderá a identificar e utilizar suas forças de caráter, cultivar emoções positivas e construir um propósito de vida mais significativo. É um convite para você florescer em todas as áreas da sua vida.
+    </p>
+
+    <h3>🌿 O que você vai desenvolver no TREINAMENTO PABE</h3>
+    <ul>
+        <li>Aprender técnicas e exercícios para aumentar o bem-estar diário</li>
+        <li>Desenvolver uma mentalidade de crescimento e resiliência</li>
+        <li>Identificar e potencializar suas forças pessoais</li>
+        <li>Cultivar gratidão, otimismo e esperança</li>
+        <li>Construir relacionamentos mais positivos e significativos</li>
+        <li>Encontrar e viver com mais propósito e significado</li>
+    </ul>
+</section>
+
+<section id="contato" class="call-to-action container">
+    <p>✨ Pronto para iniciar sua jornada PABE?</p>
+    <p class="whatsapp-instruction">Fale conosco pelos telefones:</p>
+    <div class="whatsapp-buttons-container">
+        <a class="btn-whatsapp" href="https://wa.me/5541988180624" target="_blank" rel="noopener">
+            WhatsApp Waleska Cruz (41) 98818-0624
+        </a>
+        <a class="btn-whatsapp" href="https://wa.me/5541988180625" target="_blank" rel="noopener">
+            WhatsApp Cybele Lassandro (41) 98818-0625
+        </a>
+    </div>
+    <p class="whatsapp-note">Clique no número desejado para iniciar a conversa.</p>
+</section>
+
+<footer>
+    <div class="container">
+        &copy; 2025 TREINAMENTO PABE - Todos os direitos reservados
+    </div>
+</footer>
+
+</body>
+</html>
