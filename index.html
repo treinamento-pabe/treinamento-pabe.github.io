@@ -21,7 +21,7 @@
             --font-body: 'Open Sans', sans-serif;
             /* Novas cores adicionadas */
             --pabe-text-color: #8d7c6f;
-            --psicoterapeuta-name-color: #d8726a; /* <-- COR ALTERADA AQUI */
+            --psicoterapeuta-name-color: #d8726a;
             --main-background-color: #ebdfd8;
             --header-background-color: #e1c7c5; /* Nova cor de fundo para o header */
         }
@@ -79,16 +79,16 @@
 
         header h1 span {
             display: block;
-            font-size: 2.2rem; /* Tamanho da fonte maior para Práticas > Atitude > Bem-Estar */
+            font-size: 2.2rem; /* Tamanho da fonte para Práticas > Atitude > Bem-Estar */
             color: var(--pabe-text-color); /* Cor de Práticas > Atitude > Bem-Estar */
             font-weight: 600;
         }
 
         /* Novo estilo para os nomes das psicoterapeutas no header */
         .therapist-names-header {
-            color: var(--psicoterapeuta-name-color); /* <-- UTILIZANDO A VARIÁVEL ATUALIZADA AQUI */
+            color: var(--psicoterapeuta-name-color);
             font-family: 'Arapey', serif; /* Nova fonte para os nomes das psicoterapeutas */
-            font-size: 1.5rem;
+            font-size: 1.8rem; /* <-- TAMANHO ALTERADO AQUI */
             margin-top: 15px; /* Espaço do subtítulo */
             margin-bottom: 30px; /* Espaço para o botão CTA */
             font-weight: 400; /* Arapey geralmente é normal */
@@ -251,12 +251,12 @@
                 font-size: 2.8rem;
             }
             header h1 span {
-                font-size: 2rem; /* Ajuste para responsividade */
+                font-size: 2rem;
             }
             .therapist-names-header {
-                font-size: 1.3rem;
+                font-size: 1.5rem; /* Ajustado para telas menores */
             }
-            header p { /* Este estilo agora é menos relevante para o p removido, mas mantido */
+            header p {
                 font-size: 1.1rem;
             }
             .btn-cta {
@@ -288,7 +288,7 @@
             .btn-whatsapp {
                 font-size: 1.05rem;
                 padding: 14px 25px;
-                min-width: unset; /* Remove min-width em telas menores */
+                min-width: unset;
             }
         }
 
@@ -300,10 +300,10 @@
                 font-size: 2.4rem;
             }
             header h1 span {
-                font-size: 1.8rem; /* Ajuste para responsividade */
+                font-size: 1.8rem;
             }
             .therapist-names-header {
-                font-size: 1.1rem;
+                font-size: 1.3rem; /* Ajustado para telas menores */
             }
             header p {
                 font-size: 1rem;
@@ -332,10 +332,10 @@
                 font-size: 1.8rem;
             }
             header h1 span {
-                font-size: 1.4rem; /* Ajuste para responsividade */
+                font-size: 1.4rem;
             }
             .therapist-names-header {
-                font-size: 0.9rem;
+                font-size: 1.1rem; /* Ajustado para telas menores */
             }
             header p {
                 font-size: 0.9rem;
