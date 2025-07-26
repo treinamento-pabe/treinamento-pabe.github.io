@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TREINAMENTO PABE: Práticas &gt; Atitude &gt; Bem-Estar</title>
+    <title>TREINAMENTO PABE: Práticas > Atitude > Bem-Estar</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Cores Neutras e Profissionais para PABE */
+        /* Paleta de Cores Inspirada em imersao.anaclarabastos.com.br */
         :root {
-            --primary-bg: #f9f9f9; /* Fundo principal muito claro, quase branco */
-            --secondary-bg: #ececec; /* Fundo secundário para seções de destaque, um cinza claro */
-            --text-dark: #333333; /* Texto principal escuro (parágrafos) */
-            --text-medium: #555555; /* Texto secundário (parágrafos mais claros) */
-            --text-light: #888888; /* Texto mais suave, como rodapé */
+            --primary-bg: #fdfdfd; /* Fundo principal muito claro */
+            --secondary-bg: #ffffff; /* Fundo para seções de destaque, branco puro */
+            --accent-color: #555555; /* Cinza escuro para detalhes e títulos secundários */
+            --text-dark: #333333; /* Texto principal escuro */
+            --text-medium: #555555; /* Texto secundário */
+            --text-light: #777777; /* Texto mais suave */
             
-            --main-title-color: #8d7c6f; /* Cor do título principal (h1) */
-            --subtitle-color: #d8726a; /* Cor dos subtítulos (h2, h3) e acentos */
-
-            --border-color: #dddddd; /* Borda cinza clara */
-            --white: #ffffff; /* Branco puro */
+            --main-heading-color: #333333; /* Cor para h1 principal */
+            --section-heading-color: #000000; /* Preto para títulos de seção */
+            --highlight-color: #d2a450; /* Um tom de dourado/mostarda para destaque */
+            --button-bg: #5a7d96; /* Azul acinzentado para botões */
+            --button-hover-bg: #4a6d86; /* Azul acinzentado mais escuro para hover */
+            --whatsapp-bg: #25d366; /* Verde do WhatsApp */
+            --whatsapp-hover-bg: #1ebe57; /* Verde mais escuro do WhatsApp */
+            --border-light: #eeeeee; /* Borda bem clara */
         }
 
         /* Reset Básico e Fontes */
@@ -28,341 +32,348 @@
             color: var(--text-medium);
             margin: 0;
             padding: 0;
-            line-height: 1.7;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
-            max-width: 960px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 60px;
+            padding: 0 25px;
+            box-sizing: border-box; /* Garante que o padding não aumente a largura */
         }
 
-        /* Cabeçalho e Título Principal */
+        /* Cabeçalho (Hero Section) */
         header {
             background-color: var(--secondary-bg);
-            color: var(--main-title-color);
+            padding: 60px 0 40px; /* Mais padding em cima para a hero */
             text-align: center;
-            padding: 50px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; /* Centraliza os itens horizontalmente */
-            justify-content: center; /* Centraliza os itens verticalmente */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden; /* Para garantir que nada saia dos limites */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .header-content {
-            max-width: 100%;
+            z-index: 1; /* Para garantir que o conteúdo fique acima de qualquer fundo */
+        }
+
+        header .logo {
+            max-width: 200px; /* Ajuste o tamanho do seu logo */
+            height: auto;
+            margin-bottom: 25px;
         }
 
         header h1 {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            font-size: 4rem;
-            letter-spacing: 1.5px;
-            font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.08);
-            line-height: 1.2;
-            color: var(--main-title-color);
-            text-align: center; 
+            font-size: 3.8rem; /* Um pouco menor para ficar mais moderno */
+            font-weight: 700;
+            color: var(--main-heading-color);
+            line-height: 1.1;
+            margin-bottom: 10px;
         }
         header h1 span {
             display: block;
-            font-size: 1.8rem;
+            font-size: 1.6rem; /* Subtítulo do h1 */
             font-weight: 600;
             margin-top: 10px;
-            color: var(--main-title-color);
-            white-space: nowrap; 
+            color: var(--accent-color);
         }
 
-        /* Nomes das treinadoras */
         .trainers-names {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            color: var(--subtitle-color); 
-            margin-top: 15px; 
-            margin-bottom: 0; 
-            text-align: center;
+            color: var(--highlight-color); /* Usando a cor de destaque */
+            margin-top: 20px;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
         }
 
-
-        /* Navegação */
-        nav {
-            background-color: var(--white);
-            text-align: center;
-            padding: 18px 0;
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        .header-description {
+            font-size: 1.25rem;
+            color: var(--text-medium);
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
         }
-
-        nav a {
-            color: var(--text-dark);
+        
+        /* Botão principal no cabeçalho */
+        .btn-main {
+            display: inline-block;
+            background-color: var(--button-bg);
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 50px;
             text-decoration: none;
-            padding: 12px 25px;
-            margin: 0 15px;
-            border-radius: 30px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 1.4rem;
             font-weight: 700;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
         }
 
-        nav a:hover {
-            background-color: var(--secondary-bg);
-            color: var(--text-dark);
+        .btn-main:hover {
+            background-color: var(--button-hover-bg);
+            transform: translateY(-3px);
+        }
+
+        /* Navegação (removida a posição sticky por padrão, landing page) */
+        nav {
+            display: none; /* Oculta a navegação por padrão para um estilo de landing page */
         }
 
         /* Seções de Conteúdo */
         section {
-            margin-bottom: 60px;
-            padding: 30px 0 30px 0; 
-            background-color: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
-            margin-top: 40px;
+            margin-top: 50px;
+            padding: 50px 0;
+            background-color: var(--secondary-bg);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             text-align: center;
         }
 
         section h2 {
             font-family: 'Montserrat', sans-serif;
-            color: var(--subtitle-color);
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 30px;
+            color: var(--section-heading-color); /* Título de seção em preto */
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
             position: relative;
-            padding-bottom: 20px;
+            padding-bottom: 15px;
         }
 
         section h2::after {
             content: '';
             display: block;
-            width: 100px;
+            width: 80px;
             height: 4px;
-            background-color: var(--subtitle-color);
+            background-color: var(--highlight-color); /* Linha de destaque */
             margin: 15px auto 0;
             border-radius: 2px;
         }
 
+        section p {
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            max-width: 750px;
+            margin: 20px auto;
+            line-height: 1.7;
+        }
+
+        /* Títulos de sub-seções */
         section h3 {
             font-family: 'Montserrat', sans-serif;
-            color: var(--subtitle-color);
-            font-size: 2.2rem;
+            color: var(--accent-color);
+            font-size: 2rem;
             margin-top: 40px;
             margin-bottom: 20px;
-            border-left: 6px solid var(--subtitle-color);
-            padding-left: 20px;
-            text-align: left;
-            display: inline-block;
-            max-width: 100%;
+            text-align: center; /* Centraliza h3 também */
         }
-
-        p {
-            font-size: 1.3rem;
-            color: var(--text-dark);
-            margin-bottom: 20px;
-            text-align: center;
-            display: inline-block;
-            max-width: 800px;
-        }
-
+        
+        /* Lista de Benefícios/Itens */
         ul {
             list-style: none;
-            padding-left: 0;
-            margin-bottom: 30px; 
+            padding: 0;
+            margin: 30px auto 40px;
+            max-width: 700px; /* Limita a largura da lista */
         }
 
         ul li {
             padding-left: 45px;
-            margin-bottom: 18px;
+            margin-bottom: 15px;
             position: relative;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: var(--text-dark);
-            display: block;
             text-align: left;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+            line-height: 1.5;
         }
 
         ul li::before {
-            content: "✓";
+            content: "✓"; /* Ícone de check */
             position: absolute;
             left: 0;
             top: 0;
-            color: var(--subtitle-color);
+            color: var(--highlight-color);
             font-weight: bold;
-            font-size: 1.6rem;
+            font-size: 1.8rem; /* Aumenta um pouco o check */
             line-height: 1;
         }
 
-        ul li:last-child {
-            margin-bottom: 40px; 
-        }
-
-        /* Chamada para Ação (CTA) */
+        /* Seção de Contato/CTA */
         .call-to-action {
-            text-align: center;
-            margin-top: 50px; 
             padding: 60px 40px;
-            background-color: var(--secondary-bg);
-            color: var(--text-dark);
-            border-radius: 12px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            background-color: var(--button-bg); /* Cor de fundo diferente para destaque */
+            color: var(--white);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            margin-bottom: 50px; /* Espaço maior antes do rodapé */
         }
 
         .call-to-action p {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.2rem;
-            margin-bottom: 10px; 
-            color: var(--subtitle-color);
-            font-weight: 700;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--white); /* Texto branco no fundo escuro */
+            line-height: 1.4;
+        }
+
+        .whatsapp-instruction {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--white);
         }
 
         .btn-whatsapp {
             display: inline-block;
-            background-color: #25d366;
+            background-color: var(--whatsapp-bg);
             color: white;
-            padding: 20px 45px;
+            padding: 18px 40px;
             border-radius: 40px;
             text-decoration: none;
-            font-size: 1.6rem;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 1.3rem;
             font-weight: 700;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px; /* Espaço entre os botões */
         }
 
         .btn-whatsapp:hover {
-            background-color: #1ebe57;
-            transform: translateY(-4px);
+            background-color: var(--whatsapp-hover-bg);
+            transform: translateY(-3px);
         }
 
-        /* Container para múltiplos botões de WhatsApp */
         .whatsapp-buttons-container {
             display: flex;
-            flex-direction: column; 
-            align-items: center;   
-            gap: 15px;             
-            margin-top: 25px;      
-            margin-bottom: 30px;   
+            flex-direction: column;
+            align-items: center;
+            gap: 15px; /* Espaço entre os botões */
+            margin-top: 25px;
+            margin-bottom: 30px;
         }
 
-        /* Texto de instrução para os botões */
-        .whatsapp-instruction {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.6rem; 
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 0; 
-        }
-
-        /* Nota pequena abaixo dos botões */
         .whatsapp-note {
-            font-size: 0.9rem !important; 
-            margin-top: 20px !important; 
-            color: var(--text-light) !important; 
+            font-size: 0.9rem !important;
+            margin-top: 15px !important;
+            color: rgba(255, 255, 255, 0.8) !important; /* Mais claro no fundo escuro */
         }
 
         /* Rodapé */
         footer {
             text-align: center;
-            padding: 40px;
-            font-size: 1rem;
+            padding: 30px;
+            font-size: 0.95rem;
             color: var(--text-light);
-            border-top: 1px solid var(--border-color);
-            margin-top: 50px; /* ALTERADO AQUI: Diminuído de 80px para 50px */
-            background-color: var(--white);
+            border-top: 1px solid var(--border-light);
+            background-color: var(--secondary-bg);
+            margin-top: 0; /* Rodapé segue a seção anterior */
         }
 
         /* Responsividade */
         @media (max-width: 992px) {
             .container {
-                padding: 0 40px;
-            }
-            header h1 {
-                font-size: 3.5rem;
-            }
-            header h1 span {
-                font-size: 1.6rem;
-            }
-            .trainers-names { 
-                font-size: 1.2rem;
-            }
-            .whatsapp-instruction { 
-                font-size: 1.4rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            /* Oculta toda a navegação para mobile/tablet em pé */
-            nav { 
-                display: none; 
-            }
-
-            .container {
                 padding: 0 20px;
             }
             header h1 {
-                font-size: 2.8rem;
-                text-align: center;
+                font-size: 3.2rem;
             }
             header h1 span {
                 font-size: 1.4rem;
-                white-space: normal;
             }
-            .trainers-names { 
+            .trainers-names {
                 font-size: 1.1rem;
-                margin-top: 10px;
             }
-            section {
-                padding: 20px 15px 20px 15px; 
-                margin-top: 25px;
+            .header-description {
+                font-size: 1.1rem;
             }
-            .call-to-action {
-                margin-top: 40px; 
-            }
-            /* **NOVO AQUI:** Ajusta a margem superior do rodapé para telas pequenas */
-            footer {
-                margin-top: 40px; 
+            .btn-main {
+                font-size: 1.2rem;
+                padding: 15px 35px;
             }
             section h2 {
-                font-size: 2.2rem;
+                font-size: 2.4rem;
             }
             section h3 {
                 font-size: 1.8rem;
-                text-align: left;
-                display: block;
             }
-            p, ul li {
-                font-size: 1.1rem;
+            section p, ul li {
+                font-size: 1.05rem;
             }
             ul li {
-                max-width: 95%;
-                padding-left: 35px;
-                margin-left: auto;
-                margin-right: auto;
+                padding-left: 40px;
             }
             ul li::before {
-                left: 0;
-                font-size: 1.4rem;
-            }
-            ul li:last-child {
-                margin-bottom: 30px;
-            }
-            .call-to-action {
-                padding: 30px 20px;
+                font-size: 1.6rem;
             }
             .call-to-action p {
                 font-size: 1.6rem;
             }
-            .btn-whatsapp {
+            .whatsapp-instruction {
                 font-size: 1.2rem;
-                padding: 14px 28px;
             }
-            .whatsapp-instruction { 
+            .btn-whatsapp {
+                font-size: 1.1rem;
+                padding: 16px 35px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 0 30px;
+            }
+            header h1 {
+                font-size: 2.5rem;
+            }
+            header h1 span {
                 font-size: 1.2rem;
+            }
+            .trainers-names {
+                font-size: 1rem;
+            }
+            .header-description {
+                font-size: 1rem;
+            }
+            .btn-main {
+                font-size: 1.1rem;
+                padding: 12px 30px;
+            }
+            section {
+                margin-top: 30px;
+                padding: 40px 0;
+            }
+            section h2 {
+                font-size: 2rem;
+            }
+            section h3 {
+                font-size: 1.6rem;
+            }
+            section p, ul li {
+                font-size: 0.95rem;
+            }
+            ul li {
+                padding-left: 35px;
+            }
+            ul li::before {
+                font-size: 1.4rem;
+            }
+            .call-to-action {
+                padding: 40px 20px;
+            }
+            .call-to-action p {
+                font-size: 1.4rem;
+            }
+            .whatsapp-instruction {
+                font-size: 1rem;
+            }
+            .btn-whatsapp {
+                font-size: 1rem;
+                padding: 14px 30px;
             }
         }
 
@@ -374,38 +385,49 @@
                 font-size: 2rem;
             }
             header h1 span {
-                font-size: 1.1rem;
-            }
-            .trainers-names { 
                 font-size: 1rem;
+            }
+            .trainers-names {
+                font-size: 0.9rem;
+            }
+            .header-description {
+                font-size: 0.9rem;
+            }
+            .btn-main {
+                font-size: 1rem;
+                padding: 10px 25px;
+            }
+            section {
+                margin-top: 20px;
+                padding: 30px 0;
             }
             section h2 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             section h3 {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
-            p, ul li {
-                font-size: 1rem;
+            section p, ul li {
+                font-size: 0.9rem;
+            }
+            ul li {
+                padding-left: 30px;
             }
             ul li::before {
                 font-size: 1.2rem;
             }
-            ul li:last-child {
-                margin-bottom: 20px;
-            }
             .call-to-action {
-                padding: 30px 20px;
+                padding: 30px 15px;
             }
             .call-to-action p {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
+            }
+            .whatsapp-instruction {
+                font-size: 0.9rem;
             }
             .btn-whatsapp {
-                font-size: 1rem;
-                padding: 10px 20px;
-            }
-            .whatsapp-instruction { 
-                font-size: 1rem;
+                font-size: 0.9rem;
+                padding: 12px 25px;
             }
         }
     </style>
@@ -418,26 +440,15 @@
     <div class="container header-content">
         <h1>TREINAMENTO PABE<span>Práticas &gt; Atitude &gt; Bem-Estar</span></h1> 
         <p class="trainers-names">Waleska Cruz e Cybele Lassandro</p>
+        <p class="header-description">
+            O TREINAMENTO PABE é uma jornada transformadora focada em te equipar com Práticas eficientes, fortalecer sua Atitude positiva e promover um profundo Bem-Estar. Descubra um espaço de aprendizado e desenvolvimento para aplicar a Psicologia Positiva no seu dia a dia. É um convite para você florescer em todas as áreas da sua vida.
+        </p>
+        <a href="#contato" class="btn-main">Quero Florescer!</a>
     </div>
 </header>
 
-<nav>
-    <div class="container">
-        <a href="#top-of-page">Início</a>
-        <a href="#contato">Contato</a>
-    </div>
-</nav>
-
 <section class="container">
-    <h2>🎯 Seu Caminho para o Bem-Estar e Crescimento!</h2>
-    <p>
-        O **TREINAMENTO PABE** é uma jornada transformadora focada em te equipar com **Práticas** eficientes, fortalecer sua **Atitude** positiva e promover um profundo **Bem-Estar**. Descubra um espaço de aprendizado e desenvolvimento para aplicar a Psicologia Positiva no seu dia a dia.
-    </p>
-    <p>
-        Neste treinamento, você aprenderá a identificar e utilizar suas forças de caráter, cultivar emoções positivas e construir um propósito de vida mais significativo. É um convite para você florescer em todas as áreas da sua vida.
-    </p>
-
-    <h3>🌿 O que você vai desenvolver no TREINAMENTO PABE</h3>
+    <h2>🎯 O que você vai desenvolver no TREINAMENTO PABE</h2>
     <ul>
         <li>Aprender técnicas e exercícios para aumentar o bem-estar diário</li>
         <li>Desenvolver uma mentalidade de crescimento e resiliência</li>
