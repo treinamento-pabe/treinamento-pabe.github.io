@@ -1,106 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Imersão Clínica em Luto Não Reconhecido</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #8a6c5a;
-      --accent: #f2a74c;
-      --bg-light: #fdfaf7;
-      --text-dark: #333;
-      --text-light: #555;
-      --btn-bg: #f2a74c;
-      --btn-hover: #e0973a;
-      --font-head: 'Montserrat', sans-serif;
-      --font-body: 'Open Sans', sans-serif;
-    }
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family: var(--font-body); color: var(--text-dark); background: var(--bg-light);}
-    header{background: url('hero-placeholder.jpg') center/cover fixed no-repeat; position: relative; color: white; text-align: center; padding: 120px 20px;}
-    header::after{content:''; position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);}
-    header .content{position: relative; z-index:1; max-width:800px; margin:auto;}
-    header h1{font-family: var(--font-head); font-size:3.2rem; margin-bottom:10px;}
-    header h1 span{display:block;font-size:1.5rem; color: var(--bg-light);}
-    header p{font-size:1.25rem; margin-bottom:30px;}
-    .btn-cta{display:inline-block;background:var(--btn-bg);color:#fff;padding:18px 36px;border-radius:50px;font-size:1.2rem;font-weight:600;text-decoration:none;transition:transform .2s,background .3s;}
-    .btn-cta:hover{background:var(--btn-hover);transform:translateY(-3px);}
-    section{padding:80px 20px; max-width:1000px; margin:0 auto;}
-    section:nth-child(even){background:#fff;}
-    h2{font-family: var(--font-head); font-size:2.6rem; text-align:center; margin-bottom:30px; position:relative; color:var(--text-dark);}
-    h2::after{content:''; position:absolute;width:80px;height:4px;background:var(--accent); bottom:-10px; left:50%;transform:translateX(-50%);}
-    p{font-size:1.15rem; line-height:1.7; margin-bottom:25px; text-align:center;}
-    ul{list-style:none;padding:0;max-width:700px;margin:30px auto;}
-    ul li{position:relative;padding-left:40px;margin-bottom:15px;font-size:1.1rem;}
-    ul li::before{content:'✔'; position:absolute;left:0;top:0;font-size:1.4rem;color:var(--accent);}
-    .cta-section{background:var(--primary); color:#fff; text-align:center; padding:60px 20px;border-radius:10px;}
-    .cta-section h3{font-family:var(--font-head); font-size:2rem; margin-bottom:20px;}
-    .btn-whatsapp{display:inline-block;background:#25d366;color:#fff;padding:16px 28px;border-radius:40px;text-decoration:none;font-size:1.15rem;font-weight:600;margin:10px 0;transition:transform .2s;}
-    .btn-whatsapp:hover{transform:translateY(-3px);}
-    footer{text-align:center;padding:40px 20px;font-size:0.9rem;color:var(--text-light);}
-    @media(max-width:768px){
-      header h1{font-size:2.6rem;} header p{font-size:1.1rem;}
-      h2{font-size:2rem;} p, ul li{font-size:1rem;}
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Imersão Clínica em Luto Não Reconhecido</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #8a6c5a;
+      --accent: #f2a74c;
+      --bg-light: #fdfaf7;
+      --text-dark: #333;
+      --text-light: #555;
+      --btn-bg: #f2a74c;
+      --btn-hover: #e0973a;
+      --font-head: 'Montserrat', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family: var(--font-body); color: var(--text-dark); background: var(--bg-light);}
+    header{background: url('hero-placeholder.jpg') center/cover fixed no-repeat; position: relative; color: white; text-align: center; padding: 120px 20px;}
+    header::after{content:''; position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);}
+    header .content{position: relative; z-index:1; max-width:800px; margin:auto;}
+    header h1{font-family: var(--font-head); font-size:3.2rem; margin-bottom:10px;}
+    header h1 span{display:block;font-size:1.5rem; color: var(--bg-light);}
+    header p{font-size:1.25rem; margin-bottom:30px;}
+    .btn-cta{display:inline-block;background:var(--btn-bg);color:#fff;padding:18px 36px;border-radius:50px;font-size:1.2rem;font-weight:600;text-decoration:none;transition:transform .2s,background .3s;}
+    .btn-cta:hover{background:var(--btn-hover);transform:translateY(-3px);}
+    section{padding:80px 20px; max-width:1000px; margin:0 auto;}
+    section:nth-child(even){background:#fff;}
+    h2{font-family: var(--font-head); font-size:2.6rem; text-align:center; margin-bottom:30px; position:relative; color:var(--text-dark);}
+    h2::after{content:''; position:absolute;width:80px;height:4px;background:var(--accent); bottom:-10px; left:50%;transform:translateX(-50%);}
+    p{font-size:1.15rem; line-height:1.7; margin-bottom:25px; text-align:center;}
+    ul{list-style:none;padding:0;max-width:700px;margin:30px auto;}
+    ul li{position:relative;padding-left:40px;margin-bottom:15px;font-size:1.1rem;}
+    ul li::before{content:'✔'; position:absolute;left:0;top:0;font-size:1.4rem;color:var(--accent);}
+    .cta-section{background:var(--primary); color:#fff; text-align:center; padding:60px 20px;border-radius:10px;}
+    .cta-section h3{font-family:var(--font-head); font-size:2rem; margin-bottom:20px;}
+    .btn-whatsapp{display:inline-block;background:#25d366;color:#fff;padding:16px 28px;border-radius:40px;text-decoration:none;font-size:1.15rem;font-weight:600;margin:10px 0;transition:transform .2s;}
+    .btn-whatsapp:hover{transform:translateY(-3px);}
+    footer{text-align:center;padding:40px 20px;font-size:0.9rem;color:var(--text-light);}
+    @media(max-width:768px){
+      header h1{font-size:2.6rem;} header p{font-size:1.1rem;}
+      h2{font-size:2rem;} p, ul li{font-size:1rem;}
+    }
+  </style>
 </head>
 <body>
 
+<img src="Esta.png" alt="Imagem Principal do Treinamento PABE" style="display: block; width: 100%; height: auto; margin-bottom: 30px;">
+
 <header>
-  <div class="content">
-    <h1>Imersão Clínica em Luto Não Reconhecido<br><span>Presença > Ética > Cuidado</span></h1>
-    <p>Um encontro transformador para aprimorar sua escuta clínica e acolher o luto invisível com mais segurança.</p>
-    <a href="#inscricao" class="btn-cta">Quero Participar</a>
-  </div>
+  <div class="content">
+    <h1>Imersão Clínica em Luto Não Reconhecido<br><span>Presença > Ética > Cuidado</span></h1>
+    <p>Um encontro transformador para aprimorar sua escuta clínica e acolher o luto invisível com mais segurança.</p>
+    <a href="#inscricao" class="btn-cta">Quero Participar</a>
+  </div>
 </header>
 
 <section id="sobre">
-  <h2>Por que essa imersão importa?</h2>
-  <p>Essa imersão é um convite para aprimorar sua escuta e presença, oferecendo apoio genuíno em casos de perdas e lutos não reconhecidos. Essas são perdas reais, muitas vezes invisíveis, que causam sofrimento silencioso dentro e fora da clínica.</p>
-  <ul>
-    <li>Identificar o luto mesmo quando não é verbalizado.</li>
-    <li>Validar emoções sem minimizar nem invadir.</li>
-    <li>Evitar erros éticos e garantir vínculo terapêutico.</li>
-    <li>Aprender intervenções iniciais seguras e eficazes.</li>
-  </ul>
+  <h2>Por que essa imersão importa?</h2>
+  <p>Essa imersão é um convite para aprimorar sua escuta e presença, oferecendo apoio genuíno em casos de perdas e lutos não reconhecidos. Essas são perdas reais, muitas vezes invisíveis, que causam sofrimento silencioso dentro e fora da clínica.</p>
+  <ul>
+    <li>Identificar o luto mesmo quando não é verbalizado.</li>
+    <li>Validar emoções sem minimizar nem invadir.</li>
+    <li>Evitar erros éticos e garantir vínculo terapêutico.</li>
+    <li>Aprender intervenções iniciais seguras e eficazes.</li>
+  </ul>
 </section>
 
 <section>
-  <h2>O que você vai aprender</h2>
-  <ul>
-    <li>Reconhecimento clínico do luto invisível.</li>
-    <li>Validação da dor e escuta ética.</li>
-    <li>Distinção entre luto e sofrimento generalizado.</li>
-    <li>Caminhos de intervenção conscientes e acolhedores.</li>
-    <li>Prevenção de evasão e retraumatização.</li>
-  </ul>
+  <h2>O que você vai aprender</h2>
+  <ul>
+    <li>Reconhecimento clínico do luto invisível.</li>
+    <li>Validação da dor e escuta ética.</li>
+    <li>Distinção entre luto e sofrimento generalizado.</li>
+    <li>Caminhos de intervenção conscientes e acolhedores.</li>
+    <li>Prevenção de evasão e retraumatização.</li>
+  </ul>
 </section>
 
 <section>
-  <h2>Detalhes da jornada</h2>
-  <p>📅 Dia 09 de agosto – Ao vivo e online<br>⏰ Das 09h às 16h<br>🎓 Voltado para psicólogos e estudantes de psicologia com interesse em luto clínico</p>
+  <h2>Detalhes da jornada</h2>
+  <p>📅 Dia 09 de agosto – Ao vivo e online<br>⏰ Das 09h às 16h<br>🎓 Voltado para psicólogos e estudantes de psicologia com interesse em luto clínico</p>
 </section>
 
 <section>
-  <h2>O que você terá acesso</h2>
-  <ul>
-    <li>Encontro formativo com Ana Clara Bastos (Dra. Psicologia)</li>
-    <li>Workbook exclusivo com práticas e reflexões</li>
-    <li>Materiais de aquecimento pré-imersão</li>
-    <li>Garantia de reembolso em até 7 dias</li>
-  </ul>
+  <h2>O que você terá acesso</h2>
+  <ul>
+    <li>Encontro formativo com Ana Clara Bastos (Dra. Psicologia)</li>
+    <li>Workbook exclusivo com práticas e reflexões</li>
+    <li>Materiais de aquecimento pré-imersão</li>
+    <li>Garantia de reembolso em até 7 dias</li>
+  </ul>
 </section>
 
 <section id="inscricao" class="cta-section">
-  <h3>Inscrições abertas – Garanta seu lugar</h3>
-  <p>Valor promocional do 2º lote: <strong>R$ 62,00</strong> – Inclui reembolso garantido.</p>
-  <a href="https://wa.me/55419XXXXXXX" class="btn-whatsapp" target="_blank">WhatsApp Ana Clara</a>
+  <h3>Inscrições abertas – Garanta seu lugar</h3>
+  <p>Valor promocional do 2º lote: <strong>R$ 62,00</strong> – Inclui reembolso garantido.</p>
+  <a href="https://wa.me/55419XXXXXXX" class="btn-whatsapp" target="_blank">WhatsApp Ana Clara</a>
 </section>
 
 <footer>
-  <p>&copy; 2025 Imersão Clínica em Luto Não Reconhecido – Todos os direitos reservados</p>
+  <p>&copy; 2025 Imersão Clínica em Luto Não Reconhecido – Todos os direitos reservados</p>
 </footer>
 
 </body>
