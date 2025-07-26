@@ -85,12 +85,14 @@
             font-weight: 600;
         }
 
-        header p {
-            font-size: 1.25rem;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        /* Novo estilo para os nomes das psicoterapeutas no header */
+        .therapist-names-header {
+            color: var(--psicoterapeuta-name-color);
+            font-family: var(--font-head);
+            font-size: 1.5rem;
+            margin-top: 15px; /* Espaço do subtítulo */
+            margin-bottom: 30px; /* Espaço para o botão CTA */
+            font-weight: 600;
         }
 
         .btn-cta {
@@ -232,7 +234,7 @@
         }
 
         .whatsapp-name {
-            color: var(--psicoterapeuta-name-color); /* Cor do nome da psicoterapeuta */
+            color: var(--psicoterapeuta-name-color); /* Cor do nome da psicoterapeuta nos botões */
         }
 
         /* Rodapé */
@@ -256,7 +258,10 @@
             header h1 span {
                 font-size: 1.3rem;
             }
-            header p {
+            .therapist-names-header {
+                font-size: 1.3rem;
+            }
+            header p { /* Este estilo agora é menos relevante para o p removido, mas mantido */
                 font-size: 1.1rem;
             }
             .btn-cta {
@@ -302,6 +307,9 @@
             header h1 span {
                 font-size: 1.1rem;
             }
+            .therapist-names-header {
+                font-size: 1.1rem;
+            }
             header p {
                 font-size: 1rem;
             }
@@ -329,6 +337,9 @@
                 font-size: 1.8rem;
             }
             header h1 span {
+                font-size: 0.9rem;
+            }
+            .therapist-names-header {
                 font-size: 0.9rem;
             }
             header p {
@@ -379,6 +390,7 @@
     <header>
         <div class="content">
             <h1 style="color: var(--pabe-text-color);">PABE<br><span style="color: var(--pabe-text-color);">Práticas > Atitude > Bem-Estar</span></h1>
+            <p class="therapist-names-header">Waleska Cruz e Cybele Lassandro</p>
             <a href="#inscricao" class="btn-cta">Quero Participar</a>
         </div>
     </header>
